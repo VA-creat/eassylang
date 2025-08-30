@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}Результаты{% endblock %}
+{% block content %}
+<h3>Результаты</h3>
+<p class="fs-5">Вы ответили правильно на <strong>{{ session.correct_count }}</strong> из {{ session.question_count }}. {{ mood_message }}</p>
+
+{% if incorrect %}
+<h5 class="mt-4">Разберём ошибки</h5>
+<p class="text-muted">Пройдитесь по списку и попробуйте ещё раз :)</p>
+<table class="table table-sm">
+  <thead><tr><th>Тип</th><th>Правильный ответ</th><th>Ваш ответ</th></tr></thead>
+  <tbody>
+  {% for q in incorrect %}
+    <tr class="table-danger">
+      <td>{{ q.get_qtype_display }}</td>
+      <td>
+        {% if q.qtype == 'translation_to_term' %}
+          {{ q.word.term }}
+        {% else %}
+          {{ q.word.translation }}
+        {% endif %}
+      </td>
+      <td>{{ q.user_answer|default:"—" }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<div class="alert alert-success">Ошибок нет — великолепно! </div>
+{% endif %}
+
+<div class="d-flex gap-2">
+  <a class="btn btn-secondary" href="{% url 'practice_start' %}">Повторить тренировку</a>
+  <a class="btn btn-outline-primary" href="{% url 'word_list' %}">К словам</a>
+</div>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Начать тренировку{% endblock %}
+{% block content %}
+<h3>Начать тренировку</h3>
+<p class="text-muted">Выбери язык и (по желанию) тематический урок.</p>
+<form method="post" novalidate>
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button class="btn btn-success">Старт!</button>
+</form>
+{% endblock %}

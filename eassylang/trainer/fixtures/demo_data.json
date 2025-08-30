@@ -1,0 +1,446 @@
+[
+  {
+    "model": "trainer.language",
+    "pk": 1,
+    "fields": {
+      "name": "English",
+      "code": "en"
+    }
+  },
+  {
+    "model": "trainer.language",
+    "pk": 2,
+    "fields": {
+      "name": "Russian",
+      "code": "ru"
+    }
+  },
+  {
+    "model": "trainer.language",
+    "pk": 3,
+    "fields": {
+      "name": "Spanish",
+      "code": "es"
+    }
+  },
+  {
+    "model": "trainer.word",
+    "pk": 1,
+    "fields": {
+      "language": 1,
+      "term": "apple",
+      "translation": "яблоко",
+      "part_of_speech": "other",
+      "example": "",
+      "created_at": "2025-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "trainer.word",
+    "pk": 2,
+    "fields": {
+      "language": 1,
+      "term": "book",
+      "translation": "книга",
+      "part_of_speech": "other",
+      "example": "",
+      "created_at": "2025-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "trainer.word",
+    "pk": 3,
+    "fields": {
+      "language": 1,
+      "term": "cat",
+      "translation": "кот",
+      "part_of_speech": "other",
+      "example": "",
+      "created_at": "2025-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "trainer.word",
+    "pk": 4,
+    "fields": {
+      "language": 1,
+      "term": "dog",
+      "translation": "собака",
+      "part_of_speech": "other",
+      "example": "",
+      "created_at": "2025-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "trainer.word",
+    "pk": 5,
+    "fields": {
+      "language": 1,
+      "term": "water",
+      "translation": "вода",
+      "part_of_speech": "other",
+      "example": "",
+      "created_at": "2025-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "trainer.word",
+    "pk": 6,
+    "fields": {
+      "language": 1,
+      "term": "sun",
+      "translation": "солнце",
+      "part_of_speech": "other",
+      "example": "",
+      "created_at": "2025-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "trainer.word",
+    "pk": 7,
+    "fields": {
+      "language": 1,
+      "term": "moon",
+      "translation": "луна",
+      "part_of_speech": "other",
+      "example": "",
+      "created_at": "2025-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "trainer.word",
+    "pk": 8,
+    "fields": {
+      "language": 1,
+      "term": "table",
+      "translation": "стол",
+      "part_of_speech": "other",
+      "example": "",
+      "created_at": "2025-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "trainer.word",
+    "pk": 9,
+    "fields": {
+      "language": 1,
+      "term": "chair",
+      "translation": "стул",
+      "part_of_speech": "other",
+      "example": "",
+      "created_at": "2025-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "trainer.word",
+    "pk": 10,
+    "fields": {
+      "language": 1,
+      "term": "house",
+      "translation": "дом",
+      "part_of_speech": "other",
+      "example": "",
+      "created_at": "2025-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "trainer.word",
+    "pk": 11,
+    "fields": {
+      "language": 2,
+      "term": "привет",
+      "translation": "hello",
+      "part_of_speech": "other",
+      "example": "",
+      "created_at": "2025-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "trainer.word",
+    "pk": 12,
+    "fields": {
+      "language": 2,
+      "term": "спасибо",
+      "translation": "thank you",
+      "part_of_speech": "other",
+      "example": "",
+      "created_at": "2025-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "trainer.word",
+    "pk": 13,
+    "fields": {
+      "language": 2,
+      "term": "да",
+      "translation": "yes",
+      "part_of_speech": "other",
+      "example": "",
+      "created_at": "2025-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "trainer.word",
+    "pk": 14,
+    "fields": {
+      "language": 2,
+      "term": "нет",
+      "translation": "no",
+      "part_of_speech": "other",
+      "example": "",
+      "created_at": "2025-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "trainer.word",
+    "pk": 15,
+    "fields": {
+      "language": 2,
+      "term": "город",
+      "translation": "city",
+      "part_of_speech": "other",
+      "example": "",
+      "created_at": "2025-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "trainer.word",
+    "pk": 16,
+    "fields": {
+      "language": 2,
+      "term": "река",
+      "translation": "river",
+      "part_of_speech": "other",
+      "example": "",
+      "created_at": "2025-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "trainer.word",
+    "pk": 17,
+    "fields": {
+      "language": 2,
+      "term": "школа",
+      "translation": "school",
+      "part_of_speech": "other",
+      "example": "",
+      "created_at": "2025-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "trainer.word",
+    "pk": 18,
+    "fields": {
+      "language": 2,
+      "term": "учитель",
+      "translation": "teacher",
+      "part_of_speech": "other",
+      "example": "",
+      "created_at": "2025-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "trainer.word",
+    "pk": 19,
+    "fields": {
+      "language": 2,
+      "term": "книга",
+      "translation": "book",
+      "part_of_speech": "other",
+      "example": "",
+      "created_at": "2025-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "trainer.word",
+    "pk": 20,
+    "fields": {
+      "language": 2,
+      "term": "время",
+      "translation": "time",
+      "part_of_speech": "other",
+      "example": "",
+      "created_at": "2025-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "trainer.word",
+    "pk": 21,
+    "fields": {
+      "language": 3,
+      "term": "hola",
+      "translation": "hello",
+      "part_of_speech": "other",
+      "example": "",
+      "created_at": "2025-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "trainer.word",
+    "pk": 22,
+    "fields": {
+      "language": 3,
+      "term": "gracias",
+      "translation": "thank you",
+      "part_of_speech": "other",
+      "example": "",
+      "created_at": "2025-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "trainer.word",
+    "pk": 23,
+    "fields": {
+      "language": 3,
+      "term": "sí",
+      "translation": "yes",
+      "part_of_speech": "other",
+      "example": "",
+      "created_at": "2025-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "trainer.word",
+    "pk": 24,
+    "fields": {
+      "language": 3,
+      "term": "no",
+      "translation": "no",
+      "part_of_speech": "other",
+      "example": "",
+      "created_at": "2025-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "trainer.word",
+    "pk": 25,
+    "fields": {
+      "language": 3,
+      "term": "ciudad",
+      "translation": "city",
+      "part_of_speech": "other",
+      "example": "",
+      "created_at": "2025-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "trainer.word",
+    "pk": 26,
+    "fields": {
+      "language": 3,
+      "term": "río",
+      "translation": "river",
+      "part_of_speech": "other",
+      "example": "",
+      "created_at": "2025-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "trainer.word",
+    "pk": 27,
+    "fields": {
+      "language": 3,
+      "term": "escuela",
+      "translation": "school",
+      "part_of_speech": "other",
+      "example": "",
+      "created_at": "2025-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "trainer.word",
+    "pk": 28,
+    "fields": {
+      "language": 3,
+      "term": "maestro",
+      "translation": "teacher",
+      "part_of_speech": "other",
+      "example": "",
+      "created_at": "2025-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "trainer.word",
+    "pk": 29,
+    "fields": {
+      "language": 3,
+      "term": "libro",
+      "translation": "book",
+      "part_of_speech": "other",
+      "example": "",
+      "created_at": "2025-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "trainer.word",
+    "pk": 30,
+    "fields": {
+      "language": 3,
+      "term": "tiempo",
+      "translation": "time",
+      "part_of_speech": "other",
+      "example": "",
+      "created_at": "2025-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "trainer.lesson",
+    "pk": 1,
+    "fields": {
+      "language": 1,
+      "title": "Английский язык | базовый уровень",
+      "description": "Basic English words",
+      "words": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "created_at": "2025-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "trainer.lesson",
+    "pk": 2,
+    "fields": {
+      "language": 2,
+      "title": "Русский язык | базовый уровень",
+      "description": "Базовые слова",
+      "words": [
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "created_at": "2025-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "trainer.lesson",
+    "pk": 3,
+    "fields": {
+      "language": 3,
+      "title": "Испанский язык | базовый уровень",
+      "description": "Palabras básicas",
+      "words": [
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28
+      ],
+      "created_at": "2025-01-01T00:00:00Z"
+    }
+  }
+]

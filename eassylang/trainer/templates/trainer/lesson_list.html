@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Уроки{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h3>Уроки</h3>
+  <a class="btn btn-primary" href="{% url 'lesson_add' %}">Создать урок</a>
+</div>
+
+<div class="row g-3">
+  {% for l in lessons %}
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">{{ l.title }}</h5>
+          <p class="card-text">
+            <span class="badge bg-secondary">{{ l.language.code }}</span>
+            <span class="text-muted ms-2">Слов: {{ l.word_count }}</span>
+          </p>
+          <a class="btn btn-outline-primary btn-sm" href="{% url 'lesson_detail' l.id %}">Открыть</a>
+        </div>
+      </div>
+    </div>
+  {% empty %}
+    <div class="col-12">
+      <div class="alert alert-info">Ещё нет уроков. Создай первый!</div>
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}

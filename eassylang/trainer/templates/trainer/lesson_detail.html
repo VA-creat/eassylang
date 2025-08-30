@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}{{ lesson.title }}{% endblock %}
+{% block content %}
+<h3>{{ lesson.title }} <span class="badge bg-secondary">{{ lesson.language.code }}</span></h3>
+<p class="text-muted">{{ lesson.description|default:"" }}</p>
+
+<h5>Слова в уроке</h5>
+<table class="table table-sm">
+  <thead><tr><th>Слово</th><th>Перевод</th><th>Часть речи</th></tr></thead>
+  <tbody>
+  {% for w in lesson.words.all %}
+    <tr>
+      <td>{{ w.term }}</td>
+      <td>{{ w.translation }}</td>
+      <td>{{ w.get_part_of_speech_display }}</td>
+    </tr>
+  {% empty %}
+    <tr><td colspan="3" class="text-muted">В урок ещё не добавлены слова.</td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+<a class="btn btn-success" href="{% url 'practice_start' %}">Тренироваться по этому уроку</a>
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block title %}Список слов{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h3>Слова</h3>
+  <div class="d-flex gap-2">
+    <a class="btn btn-primary" href="{% url 'word_add' %}">+ Добавить слово</a>
+    <a class="btn btn-outline-secondary" href="{% url 'import_csv' %}">Импорт CSV</a>
+  </div>
+</div>
+
+<form class="row g-2 mb-3" method="get">
+  <div class="col-sm-4">
+    <select class="form-select" name="language" aria-label="Фильтр по языку">
+      <option value="">Все языки</option>
+      {% for lang in languages %}
+        <option value="{{ lang.id }}" {% if current_language == lang.id %}selected{% endif %}>
+          {{ lang.name }} ({{ lang.code }})
+        </option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="col-sm-6">
+    <input class="form-control" type="text" placeholder="Искать слово или перевод…" name="q" value="{{ query }}">
+  </div>
+  <div class="col-sm-2">
+    <button class="btn btn-outline-secondary w-100" type="submit">Фильтровать</button>
+  </div>
+</form>
+
+{% if words %}
+<table class="table table-striped align-middle">
+  <thead><tr><th>Язык</th><th>Слово</th><th>Перевод</th><th>Часть речи</th><th>Пример</th></tr></thead>
+  <tbody>
+    {% for w in words %}
+      <tr>
+        <td><span class="badge bg-secondary">{{ w.language.code }}</span></td>
+        <td>{{ w.term }}</td>
+        <td><strong>{{ w.translation }}</strong></td>
+        <td><span class="badge bg-light text-dark">{{ w.get_part_of_speech_display }}</span></td>
+        <td class="text-muted">{{ w.example|default:"—" }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<div class="card border-0 shadow-sm">
+  <div class="card-body">
+    <h5 class="card-title">Пока пусто</h5>
+    <p class="text-muted mb-2">Начни с пары слов — добавь вручную или импортируй CSV.</p>
+    <a class="btn btn-primary btn-sm" href="{% url 'word_add' %}">Добавить слово</a>
+    <a class="btn btn-outline-secondary btn-sm" href="{% url 'import_csv' %}">Импорт CSV</a>
+  </div>
+</div>
+{% endif %}
+{% endblock %}

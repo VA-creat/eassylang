@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Вопрос{% endblock %}
+{% block content %}
+<h4 class="mb-3">Вопрос {{ current_index }} из {{ total }}</h4>
+
+<div class="progress mb-3" role="progressbar" aria-valuenow="{{ progress_pct }}" aria-valuemin="0" aria-valuemax="100">
+  <div class="progress-bar" style="width: {{ progress_pct }}%"></div>
+</div>
+
+<form method="post">
+  {% csrf_token %}
+  {% if question.qtype == 'term_to_translation' %}
+    <p class="lead"><strong>Переведите слово:</strong> <span class="badge bg-primary">{{ question.word.term }}</span></p>
+    <input class="form-control" type="text" name="answer" placeholder="Ваш перевод" autocomplete="off" autofocus>
+  {% elif question.qtype == 'translation_to_term' %}
+    <p class="lead"><strong>Какое это слово?</strong> <span class="badge bg-primary">{{ question.word.translation }}</span></p>
+    <input class="form-control" type="text" name="answer" placeholder="Ваш вариант" autocomplete="off" autofocus>
+  {% else %}
+    <p class="lead"><strong>Выберите правильный перевод для:</strong> <span class="badge bg-primary">{{ question.word.term }}</span></p>
+    {% for opt in options %}
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="answer" id="opt{{ forloop.counter }}" value="{{ opt }}" required>
+        <label class="form-check-label" for="opt{{ forloop.counter }}">{{ opt }}</label>
+      </div>
+    {% endfor %}
+  {% endif %}
+  <button class="btn btn-primary mt-3">Ответить</button>
+</form>
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% block title %}Главная — EassyLang{% endblock %}
+{% block content %}
+<section class="hero p-4 p-md-5 rounded-3 mb-4 bg-light">
+  <div class="container-fluid py-3">
+    <h1 class="display-6 fw-bold">Учить языки вместе с EassyLang легко!</h1>
+    <p class="col-md-8 fs-5">Добавляй свои наборы слов, составляй тематические уроки и тренируйся. Бесплатно и без регистрации ;)</p>
+    <div class="d-flex gap-2 flex-wrap">
+      <a class="btn btn-primary" href="{% url 'word_add' %}">+ Добавить слово</a>
+      <a class="btn btn-outline-primary" href="{% url 'import_csv' %}">Импорт из CSV (таблица с набором слов) </a>
+      <a class="btn btn-outline-secondary" href="{% url 'lesson_add' %}">Создать урок</a>
+      <a class="btn btn-success" href="{% url 'practice_start' %}">Начать тренировку</a>
+    </div>
+  </div>
+</section>
+
+<div class="row g-3">
+  <div class="col-md-4">
+    <div class="card h-100">
+      <div class="card-body">
+        <h5 class="card-title">Твои языки</h5>
+        <p class="display-6">{{ lang_count }}</p>
+        <p class="text-muted small mb-0">Можно добавить несколько языков, стань полиглотом!</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card h-100">
+      <div class="card-body">
+        <h5 class="card-title">Слова в твоей библиотеке</h5>
+        <p class="display-6">{{ word_count }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card h-100">
+      <div class="card-body">
+        <h5 class="card-title">Уроки</h5>
+        <p class="display-6">{{ lesson_count }}</p>
+        <p class="text-muted small mb-0">Собери слова в темы, чтобы тренироваться точечно.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h5 class="mt-4">Недавние тренировки</h5>
+{% if recent_sessions %}
+<table class="table table-sm align-middle">
+  <thead><tr><th>ID</th><th>Язык</th><th>Урок</th><th>Вопросов</th><th>Верно</th><th>Когда</th></tr></thead>
+  <tbody>
+  {% for s in recent_sessions %}
+    <tr>
+      <td><code>{{ s.id }}</code></td>
+      <td>{{ s.language.name }}</td>
+      <td>{% if s.lesson %}{{ s.lesson.title }}{% else %}<em>без урока</em>{% endif %}</td>
+      <td>{{ s.question_count }}</td>
+      <td>{{ s.correct_count }}</td>
+      <td>{{ s.created_at|date:"d.m H:i" }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<div class="alert alert-info">Ещё не тренировались. Нажми «Начать тренировку» — и вперёд!</div>
+{% endif %}
+{% endblock %}

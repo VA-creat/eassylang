@@ -1,0 +1,4 @@
+body { padding-bottom: 40px; }
+.table-sm td, .table-sm th { padding: .5rem; }
+.hero { background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%); }
+.progress { height: 12px; }
