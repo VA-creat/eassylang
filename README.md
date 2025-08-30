@@ -7,9 +7,10 @@ EassyLang — это простой тренажёр для изучения и�
 ## Локальный запуск
 
 ```bash
-# 1. Создайте виртуальное окружение
-python -m venv .venv
-source .venv/bin/activate   # для windows: .venv\Scripts\activate
+# 1. Создайте и активируйте виртуальное окружение
+1) python -m venv .venv
+
+2) source .venv/bin/activate   # для windows: .venv\Scripts\activate
 
 # 2. Установите зависимости
 pip install -r requirements.txt
